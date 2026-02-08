@@ -1,0 +1,112 @@
+### API de Gestión de Alumnos
+### Este archivo puede usarse con la extensión REST Client de VS Code/Cursor
+### Instala la extensión: "REST Client" de Huachao Mao
+
+@baseUrl = http://localhost:3000
+@contentType = application/json
+
+### ============================================
+### INFORMACIÓN DE LA API
+### ============================================
+
+GET {{baseUrl}}/
+
+### ============================================
+### OBTENER ALUMNOS
+### ============================================
+
+### Obtener todos los alumnos
+GET {{baseUrl}}/api/alumnos
+
+### Obtener alumno por ID (reemplaza :id con un ID real)
+GET {{baseUrl}}/api/alumnos/507f1f77bcf86cd799439011
+
+### Buscar alumnos por nombre o apellidos
+GET {{baseUrl}}/api/alumnos/buscar?q=Juan
+
+### Filtrar alumnos por promoción
+GET {{baseUrl}}/api/alumnos/promocion/2024
+
+### ============================================
+### CREAR ALUMNO
+### ============================================
+
+POST {{baseUrl}}/api/alumnos
+Content-Type: {{contentType}}
+
+{
+  "nombre": "Juan",
+  "apellidos": "Pérez García",
+  "promocion": "2024",
+  "ciclo": "DAW",
+  "urlImagen": "https://i.pravatar.cc/150?img=1"
+}
+
+### ============================================
+### ACTUALIZAR ALUMNO
+### ============================================
+
+### Actualizar alumno (reemplaza :id con un ID real)
+PUT {{baseUrl}}/api/alumnos/507f1f77bcf86cd799439011
+Content-Type: {{contentType}}
+
+{
+  "nombre": "Juan Carlos",
+  "apellidos": "Pérez García",
+  "promocion": "2024",
+  "ciclo": "DAW",
+  "urlImagen": "https://i.pravatar.cc/150?img=2"
+}
+
+### ============================================
+### ELIMINAR ALUMNO
+### ============================================
+
+### Eliminar alumno (reemplaza :id con un ID real)
+DELETE {{baseUrl}}/api/alumnos/507f1f77bcf86cd799439011
+
+### ============================================
+### EJEMPLOS ADICIONALES
+### ============================================
+
+### Crear alumno - Ciclo SMX
+POST {{baseUrl}}/api/alumnos
+Content-Type: {{contentType}}
+
+{
+  "nombre": "María",
+  "apellidos": "González López",
+  "promocion": "2023/2024",
+  "ciclo": "SMX",
+  "urlImagen": "https://i.pravatar.cc/150?img=3"
+}
+
+### Crear alumno - Ciclo ARI
+POST {{baseUrl}}/api/alumnos
+Content-Type: {{contentType}}
+
+{
+  "nombre": "Carlos",
+  "apellidos": "Martínez Ruiz",
+  "promocion": "2024/2025",
+  "ciclo": "ARI",
+  "urlImagen": "https://i.pravatar.cc/150?img=5"
+}
+
+### Crear alumno - Ciclo IEA
+POST {{baseUrl}}/api/alumnos
+Content-Type: {{contentType}}
+
+{
+  "nombre": "Ana",
+  "apellidos": "Sánchez Torres",
+  "promocion": "2023/2024",
+  "ciclo": "IEA",
+  "urlImagen": "https://i.pravatar.cc/150?img=7"
+}
+
+### Buscar alumnos con término específico
+GET {{baseUrl}}/api/alumnos/buscar?q=García
+
+### Obtener alumnos de promoción 2023
+GET {{baseUrl}}/api/alumnos/promocion/2023

@@ -1,0 +1,264 @@
+{
+	"info": {
+		"_postman_id": "api-alumnos-collection",
+		"name": "API Alumnos",
+		"description": "Colección de Postman para la API de Gestión de Alumnos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Alumnos",
+			"item": [
+				{
+					"name": "Obtener todos los alumnos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/alumnos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"alumnos"
+							]
+						},
+						"description": "Obtiene todos los alumnos registrados"
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener alumno por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/alumnos/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"alumnos",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "ID del alumno"
+								}
+							]
+						},
+						"description": "Obtiene un alumno específico por su ID"
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar alumnos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/alumnos/buscar?q=nombre",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"alumnos",
+								"buscar"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "nombre",
+									"description": "Término de búsqueda (nombre o apellidos)"
+								}
+							]
+						},
+						"description": "Busca alumnos por nombre o apellidos"
+					},
+					"response": []
+				},
+				{
+					"name": "Filtrar por promoción",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/alumnos/promocion/:promocion",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"alumnos",
+								"promocion",
+								":promocion"
+							],
+							"variable": [
+								{
+									"key": "promocion",
+									"value": "2024",
+									"description": "Año de la promoción"
+								}
+							]
+						},
+						"description": "Obtiene todos los alumnos de una promoción específica"
+					},
+					"response": []
+				},
+				{
+					"name": "Crear nuevo alumno",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nombre\": \"Juan\",\n  \"apellidos\": \"Pérez García\",\n  \"promocion\": \"2024\",\n  \"ciclo\": \"DAW\",\n  \"urlImagen\": \"https://via.placeholder.com/150\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/alumnos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"alumnos"
+							]
+						},
+						"description": "Crea un nuevo alumno. Campos requeridos: nombre, apellidos, promocion, ciclo (DAW|SMX|ARI|IEA), urlImagen"
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar alumno",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nombre\": \"Juan\",\n  \"apellidos\": \"Pérez García\",\n  \"promocion\": \"2024\",\n  \"ciclo\": \"DAW\",\n  \"urlImagen\": \"https://via.placeholder.com/150\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/alumnos/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"alumnos",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "ID del alumno a actualizar"
+								}
+							]
+						},
+						"description": "Actualiza un alumno existente"
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar alumno",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/alumnos/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"alumnos",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "ID del alumno a eliminar"
+								}
+							]
+						},
+						"description": "Elimina un alumno por su ID"
+					},
+					"response": []
+				}
+			],
+			"description": "Endpoints para gestionar alumnos"
+		},
+		{
+			"name": "Info",
+			"item": [
+				{
+					"name": "Información de la API",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								""
+							]
+						},
+						"description": "Obtiene información sobre la API"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}

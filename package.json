@@ -1,0 +1,21 @@
+{
+  "name": "api-alumnos-backend",
+  "version": "1.0.0",
+  "description": "API REST para gestión de alumnos con MongoDB Atlas",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js"
+  },
+  "keywords": ["api", "rest", "mongodb", "express"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1",
+    "mongoose": "^8.8.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7"
+  }
+}
+
