@@ -77,7 +77,7 @@ npm install
    ```env
    PORT=3000
    MONGODB_URI=mongodb+srv://usuario:password@cluster.mongodb.net/alumnos?retryWrites=true&w=majority
-   FRONTEND_URL=http://localhost:5173
+   FRONTEND_URL=http://localhost:3000
    ```
 
 3. **Configurar MongoDB Atlas:**
@@ -98,7 +98,7 @@ cd frontend
 npm run dev
 ```
 
-El frontend estará disponible en `http://localhost:5173`
+El frontend estará disponible en `http://localhost:3000`
 
 **Backend (Terminal 2):**
 
@@ -128,7 +128,7 @@ npm start
 
 ## Verificación
 
-1. **Frontend**: Abre `http://localhost:5173` en tu navegador
+1. **Frontend**: Abre `http://localhost:3000` en tu navegador
 2. **Backend**: Visita `http://localhost:3000` - deberías ver un JSON con información de la API
 3. **API**: Prueba `http://localhost:3000/api/alumnos` - debería devolver un array (vacío si no hay datos)
 

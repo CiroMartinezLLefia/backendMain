@@ -36,7 +36,7 @@ En este ejercicio aprenderás a:
 ```env
 PORT=3000
 MONGODB_URI=mongodb+srv://usuario:password@cluster.mongodb.net/alumnos?retryWrites=true&w=majority
-FRONTEND_URL=http://localhost:5173
+FRONTEND_URL=http://localhost:3000
 ```
 
 **Archivo `package.json`:**
