@@ -4,11 +4,35 @@ import mongoose from 'mongoose';
 import alumnosRoutes from '../routes/alumnos.routes.js';
 
 const app = express();
-const FRONTEND_URL = process.env.FRONTEND_URL || '*';
+const rawAllowedOrigins = process.env.FRONTEND_URL || '*';
+
+const normalizeOrigin = (origin) => {
+  if (!origin) return origin;
+  return origin.replace(/\/$/, '');
+};
+
+const allowedOrigins = rawAllowedOrigins
+  .split(',')
+  .map((origin) => normalizeOrigin(origin.trim()))
+  .filter(Boolean);
+
+const isWildcardCors = allowedOrigins.includes('*');
 
 // Middleware
 app.use(cors({
-  origin: FRONTEND_URL,
+  origin: (origin, callback) => {
+    if (!origin) {
+      callback(null, true);
+      return;
+    }
+
+    if (isWildcardCors || allowedOrigins.includes(normalizeOrigin(origin))) {
+      callback(null, true);
+      return;
+    }
+
+    callback(new Error('Origen no permitido por CORS'));
+  },
   credentials: true,
 }));
 app.use(express.json());
